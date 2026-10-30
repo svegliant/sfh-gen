@@ -128,8 +128,8 @@ worked script.
 
 ## Which options matter
 
-Everything else can stay at its default. Timings are the tetracene dimer below,
-60 atoms, 6-31G, 24 cores.
+Everything else can stay at its default. Timings are
+[examples/tetracene/](examples/tetracene/): 60 atoms, 6-31G, 24 cores.
 
 | decision | key | cost | choose it when |
 |---|---|---|---|
@@ -227,7 +227,9 @@ both at the time and again after the results.
 Xie *et al.* tabulate three tetracene dimers — AB in Table 1, AC and BC in the
 Supporting Information — whose couplings span an order of magnitude. All three
 were run here at CASCI(4,4)/6-31G\*. Magnitudes are compared, since the signs
-and the A/B labelling are conventions.
+are conventions. Which monomer is called A is a convention too: our values are
+given exactly as `H_SF.dat` holds them, and where the paper names the two
+monomers the other way round, its values are relabelled to match ours.
 
 | dimer | pair | strongest coupling | worst coupling error |
 |---|---|---|---|
@@ -236,24 +238,26 @@ and the A/B labelling are conventions.
 | AC, Table S1 | translation by 6.0565 Å | 96 meV | 10 meV |
 
 **Every coupling reproduces, to 25 meV or better, on all three pairs.** Dimer
-AB element by element:
+AB element by element, in eV, rows in the order of
+[tetracene_1/H_SF.dat](examples/crystal_dimers/tetracene_1/H_SF.dat); the
+paper's A and B are exchanged for this pair:
 
 | | this work | Xie 2019 | diff |
 |---|---|---|---|
-| E(LE1) | 4.014 | 4.144 | −0.130 |
-| E(LE2) | 3.894 | 4.070 | −0.176 |
-| E(CT1) | 4.362 | 4.509 | −0.147 |
-| E(CT2) | 4.963 | 4.992 | −0.029 |
-| E(TT) | 4.188 | 4.065 | +0.123 |
+| E(LE1), \|A\* B⟩ | 3.894 | 4.070 | −0.176 |
+| E(LE2), \|A B\*⟩ | 4.014 | 4.144 | −0.130 |
+| E(CT1), \|A⁺ B⁻⟩ | 4.963 | 4.992 | −0.029 |
+| E(CT2), \|A⁻ B⁺⟩ | 4.362 | 4.509 | −0.147 |
+| E(TT), \|Aᵀ Bᵀ⟩ | 4.188 | 4.065 | +0.123 |
 | LE1/LE2 | 0.026 | 0.026 | +0.000 |
-| LE1/CT1 | 0.095 | 0.109 | −0.014 |
-| LE1/CT2 | 0.107 | 0.092 | +0.015 |
-| LE2/CT1 | 0.104 | 0.090 | +0.014 |
-| LE2/CT2 | 0.100 | 0.112 | −0.012 |
+| LE1/CT1 | 0.100 | 0.112 | −0.012 |
+| LE1/CT2 | 0.104 | 0.090 | +0.014 |
+| LE2/CT1 | 0.107 | 0.092 | +0.015 |
+| LE2/CT2 | 0.095 | 0.109 | −0.014 |
 | LE1/TT, LE2/TT | 0.000 | 0.000 | +0.000 |
 | CT1/CT2 | 0.000 | 0.000 | +0.000 |
-| CT1/TT | 0.088 | 0.070 | +0.018 |
-| CT2/TT | 0.062 | 0.087 | −0.025 |
+| CT1/TT | 0.062 | 0.087 | −0.025 |
+| CT2/TT | 0.088 | 0.070 | +0.018 |
 
 The run behind this table, its log and the other two pairs are in
 [examples/crystal_dimers/](examples/crystal_dimers/), where

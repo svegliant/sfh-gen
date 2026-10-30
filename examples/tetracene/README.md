@@ -35,7 +35,8 @@ the dimer SCF, the rest in the final CASCI.
 
 ## What it found
 
-Diabatic Hamiltonian in eV, diagonal referenced to ε(|2020⟩):
+Diabatic Hamiltonian at CASCI(4,4)/6-31G, with 6-31G in every step, in eV,
+diagonal referenced to ε(|2020⟩):
 
 | | LE1 | LE2 | CT1 | CT2 | TT |
 |---|---|---|---|---|---|
@@ -58,32 +59,21 @@ Three groups, spanning three orders of magnitude:
 **The LE states are not coupled to the triplet pair at all; they are coupled to
 the CT states, and the CT states are coupled to the triplet pair.** Fission
 therefore proceeds through the charge-transfer configurations rather than
-directly, and since both CT states sit 0.3–1.0 eV above the LE states, they act
+directly, and since both CT states sit 0.26–0.99 eV above the LE states, they act
 as virtual intermediates — a superexchange mechanism, not a sequential one.
 That the direct LE–TT coupling comes out at 0.05 meV rather than exactly zero
 is numerical noise, not a small real coupling.
 
 ## What this does not establish
 
-The couplings above agree with Xie *et al.* (2019) Table 1 to within 23 meV.
-The diagonal does not: TT is 192 meV too high and CT1 121 meV too low.
+**This run is not the validation.** It is the regression target, at 6-31G. The
+comparison with Xie *et al.* (2019) is made at CASCI(4,4)/6-31G\*, the basis of
+their dimer calculation, in [../crystal_dimers/](../crystal_dimers/), whose
+`tetracene_1` is this same geometry. Compare with the paper there.
 
-That difference changes the qualitative picture of the driving force. Here
-E(TT) − E(LE1) = +0.247 eV, making fission look clearly endothermic; the
-reference values give −0.005 eV, essentially isoergic, which is what tetracene
-is known for.
-
-Two explanations have since been ruled out: the energy zero, which shifts the
-whole diagonal and so cannot change a gap between two entries, and the basis,
-since this same dimer at 6-31G\* leaves the couplings within 25 meV and the gap
-at +0.294 eV. Both calculations start from experimental crystal structures, so
-the geometry is a weaker candidate than it looks, though the exact structure,
-temperature and hydrogen treatment have not been matched. The same disagreement
-appears on all three published tetracene pairs — see
-[../crystal_dimers/](../crystal_dimers/).
-
-Use this case as evidence about couplings and about the code being
-self-consistent. Do not quote its state energies.
+The diagonal is not validated at either basis: see the main README. Use this
+case as evidence about the couplings and about the code being self-consistent,
+and do not quote its state energies.
 
 ## Pitfalls
 

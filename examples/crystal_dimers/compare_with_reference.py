@@ -12,18 +12,20 @@ Two conventions have to be fixed before any comparison means anything.
 Orbital phases are arbitrary, so every off-diagonal element may come out with
 either sign; magnitudes are compared. Which monomer is called A is also a
 convention, so exchanging LE1 with LE2 and CT1 with CT2 at the same time is a
-relabelling of the same result, not a different one. Both labellings are
-tried and the closer one is reported.
+relabelling of the same result, not a different one. Both labellings of the
+*published* table are tried and the closer one is used; the computed matrix is
+always printed exactly as H_SF.dat holds it, row for row, and the output says
+when the published A and B were exchanged.
 
-The diagonal is reported as computed and again after the mean difference has
-been removed, because the two calculations do not share an energy zero: the
-remaining spread is what a uniform shift cannot explain.
+The two calculations do not share an energy zero, so the diagonal is judged
+by its spread: the largest minus the smallest of the five differences, which
+no uniform shift can remove.
 """
 
 import argparse as arg
 import os
 import sys
-from typing import Dict, Optional
+from typing import Dict, Optional, Tuple
 
 import numpy as np
 import yaml
@@ -49,22 +51,23 @@ def load_reference(path: str = REFERENCE) -> Dict[str, dict]:
         return yaml.safe_load(fh)
 
 
-def align(h: np.ndarray, ref: np.ndarray) -> np.ndarray:
-    """`h` under the A/B labelling that sits closest to `ref`.
+def align(h: np.ndarray, ref: np.ndarray) -> Tuple[np.ndarray, bool]:
+    """`ref` under the A/B labelling that sits closest to `h`, and whether
+    its A and B were exchanged. `h` itself is never relabelled.
 
     A nearly symmetric dimer has nearly equal LE energies and the couplings
     alone barely separate the two labellings, so the whole matrix is scored:
     couplings by magnitude, the diagonal signed.
     """
-    best, score = h, np.inf
-    for perm in (np.arange(5), SWAP_AB):
-        candidate = h[np.ix_(perm, perm)]
-        d = np.abs(np.abs(candidate) - np.abs(ref))
+    best, swapped, score = ref, False, np.inf
+    for perm, is_swap in ((np.arange(5), False), (SWAP_AB, True)):
+        candidate = ref[np.ix_(perm, perm)]
+        d = np.abs(np.abs(candidate) - np.abs(h))
         total = d[np.triu_indices(5, 1)].sum() + np.abs(
-            np.diag(candidate) - np.diag(ref)).sum()
+            np.diag(candidate) - np.diag(h)).sum()
         if total < score:
-            best, score = candidate, total
-    return best
+            best, swapped, score = candidate, is_swap, total
+    return best, swapped
 
 
 def couplings(h: np.ndarray) -> np.ndarray:
@@ -73,10 +76,12 @@ def couplings(h: np.ndarray) -> np.ndarray:
 
 
 def report(run: str, dimer: str, source: str, h: np.ndarray, ref: np.ndarray):
-    h = align(h, ref)
+    ref, swapped = align(h, ref)
     diag = np.diag(h) - np.diag(ref)
 
     print(f"{run}  —  {dimer}, {source}")
+    if swapped:
+        print("  (published A and B exchanged to match this work)")
     print(f"  {'element':12s}{'this work':>11s}{'Xie 2019':>11s}{'diff':>9s}")
     for i in range(5):
         print(f"  {'E(' + LABELS[i] + ')':12s}{h[i, i]:11.3f}{ref[i, i]:11.3f}"
@@ -100,7 +105,7 @@ def summarise(run: str, dimer: Optional[str], h: np.ndarray,
         print(f"  {run:14s} {'—':>14s} {strongest * 1000:9.0f} "
               f"{'—':>9s} {'—':>11s}")
         return
-    h = align(h, ref)
+    ref, _ = align(h, ref)
     diag = np.diag(h) - np.diag(ref)
     worst = np.abs(couplings(h) - couplings(ref)).max()
     print(f"  {run:14s} {dimer:>14s} {strongest * 1000:9.0f}"
