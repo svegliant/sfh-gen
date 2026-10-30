@@ -1,0 +1,14 @@
+# Singlet Fission diabatic Hamiltonian (5x5)
+# produced by  : sfh-gen 0.1.0
+# units        : eV
+# energy zero  : eps(|2020>), the diabatic ground state
+# source       : final_test/05_casci/tetracene_casci.rasscf.h5
+#
+# row/col order: |A* B >, |A  B*>, |A+ B->, |A- B+>, |AT BT>
+#
+#      |A* B >     |A  B*>     |A+ B->     |A- B+>     |AT BT>   | state
+    4.010575    0.028298   -0.102011    0.105075   -0.000047   | |A* B >
+    0.028298    4.125683   -0.108417    0.096598   -0.000053   | |A  B*>
+   -0.102011   -0.108417    4.998283    0.000115   -0.063628   | |A+ B->
+    0.105075    0.096598    0.000115    4.388027   -0.091105   | |A- B+>
+   -0.000047   -0.000053   -0.063628   -0.091105    4.257267   | |AT BT>

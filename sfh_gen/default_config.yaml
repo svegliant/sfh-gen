@@ -1,0 +1,66 @@
+# ============================================================
+#  sfh-gen — configuration
+# ============================================================
+
+paths:
+  geometry:   "dimer.xyz"      # dimer geometry (XYZ)
+  monomer1:   null             # optional: if absent the dimer is split
+  monomer2:   null             #           automatically (needs MDAnalysis)
+  openmolcas: "pymolcas"       # OpenMolcas executable (in PATH or absolute)
+  workdir:    "."
+
+system:
+  name:   "dimer"              # prefix of the files produced
+  charge: 0
+  spin:   1                    # multiplicity (1 = singlet)
+
+basis:
+  name: "6-31G"
+  # For a different basis set per element:
+  # per_element:
+  #   C: "6-31G*"
+  #   H: "6-31G"
+
+integrals:
+  ricd:   true                 # atomic Cholesky of the two-electron integrals
+  cutoff: 1.0e-20              # &SEWARD CutOff, the same in every step
+
+monomer:
+  n_electrons: 2               # CAS(2,2): the monomer HOMO/LUMO pair
+  n_orbitals:  2
+  n_roots:     3               # state-averaged, which relaxes the LUMO
+  natural_orbital_root: 1      # reads <project>.RasOrb.N
+  # Not the state-averaged <project>.RasOrb: with equally weighted roots its
+  # active density is degenerate and the orbitals are an arbitrary rotation
+  # of HOMO/LUMO, which destroys the diabatic basis.
+
+dimer:
+  n_electrons: 4               # CAS(4,4): the HOMO/LUMO of both monomers
+  n_orbitals:  4
+  n_roots:     null            # null -> every CSF (20 for a CAS(4,4) singlet)
+  scaffold:    "scf"           # step 03 supplies only the AO overlap, geometry
+                               # and basis IDs, so SCF is enough. "rasscf" runs
+                               # the reference procedure's full CASSCF instead.
+
+hamiltonian:
+  output: "H_SF.dat"
+  # The diagonal is always referenced to eps(|2020>), the diabatic ground
+  # state. The adiabatic reference (lowest root) is printed for comparison.
+
+parallel:
+  nprocs: null                 # MPI processes for the job (MOLCAS_NPROCS).
+                               # null leaves it unset, as a serial build needs.
+                               # Override with --nprocs $SLURM_NTASKS.
+  concurrent_steps: "all"      # which independent steps overlap, sharing nprocs:
+                               #   all      01+02+03 together (12 -> 4+4+4)
+                               #   monomers 01+02 together, 03 alone
+                               #   none     one after the other
+                               # They depend on nothing but their own geometry.
+                               # Overlapping costs no processes but multiplies
+                               # peak memory by the number of concurrent runs.
+
+run:
+  skip_existing: true          # skip steps that are already complete
+  verbose:       true
+  dry_run:       false         # true -> generate the inputs without running OpenMolcas
+  keep_scratch:  false         # true -> keep the OpenMolcas scratch dirs (~GB per dimer)

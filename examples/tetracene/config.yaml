@@ -1,0 +1,46 @@
+# Tetracene dimer: the test case of README "Validation".
+#
+#   sfh-gen config.yaml
+#
+# Monomer geometries are given explicitly here so the run needs no MDAnalysis.
+# Removing the two monomer lines makes sfh-gen split the dimer by connectivity.
+
+paths:
+  geometry:   "tetracene_dimer.xyz"
+  monomer1:   "tetracene_mono1.xyz"
+  monomer2:   "tetracene_mono2.xyz"
+  openmolcas: "pymolcas"
+  workdir:    "."
+
+system:
+  name:   tetracene
+  charge: 0
+  spin:   1
+
+basis:
+  name: "6-31G"
+
+integrals:
+  ricd:   true
+  cutoff: 1.0e-20
+
+monomer:
+  n_roots: 3
+  natural_orbital_root: 1
+
+dimer:
+  n_roots:  null      # null -> every CSF (20 for a CAS(4,4) singlet)
+  scaffold: "scf"
+
+hamiltonian:
+  output: "H_SF.dat"
+
+parallel:
+  nprocs: null
+  concurrent_steps: "all"     # 01, 02 and 03 overlap; nprocs splits three ways
+
+run:
+  skip_existing: true
+  verbose:       false
+  dry_run:       false
+  keep_scratch:  false

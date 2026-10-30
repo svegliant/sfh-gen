@@ -1,0 +1,48 @@
+# ============================================================
+#  Singlet Fission Hamiltonian pipeline - tetracene_2
+#  CASCI(4,4)/6-31G* on the dimer, local HOMO/LUMO pairs.
+# ============================================================
+
+paths:
+  geometry:   "dimer_2.xyz"
+  monomer1:   null             # split from the dimer by connectivity
+  monomer2:   null
+  openmolcas: "pymolcas"
+  workdir:    "."
+
+system:
+  name:   "tetracene_2"
+  charge: 0
+  spin:   1
+
+basis:
+  name: "6-31G*"
+
+integrals:
+  ricd:   true
+  cutoff: 1.0e-20
+
+monomer:
+  n_electrons: 2
+  n_orbitals:  2
+  n_roots:     3
+  natural_orbital_root: 1
+
+dimer:
+  n_electrons: 4
+  n_orbitals:  4
+  n_roots:     null            # null -> every CSF (20 for a CAS(4,4) singlet)
+  scaffold:    "scf"           # step 03 supplies the AO overlap and geometry only
+
+hamiltonian:
+  output: "H_SF.dat"
+
+parallel:
+  nprocs:           12
+  concurrent_steps: "none"     # each step gets all 12 processes, as in final_tests
+
+run:
+  skip_existing: true
+  verbose:       true
+  dry_run:       false
+  keep_scratch:  false

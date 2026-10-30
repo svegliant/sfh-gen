@@ -1,0 +1,44 @@
+# Build artefacts
+*.egg-info/
+__pycache__/
+*.py[cod]
+build/
+dist/
+.eggs/
+.pytest_cache/
+
+# Virtual environments
+.venv/
+venv/
+
+# Pipeline output: a run writes its step directories and results into the
+# working directory, which is often the checkout itself.
+0[1-5]_*/
+*.RasOrb
+*.RasOrb.[0-9]
+*.h5
+*.log
+H_SF.dat
+warnings.txt
+.sfh_stamp.json
+
+# The exception: examples/crystal_dimers holds eight finished runs, whose log
+# and Hamiltonian are the point of the directory. Nothing runs there, so these
+# cannot be overwritten by accident.
+!examples/crystal_dimers/*/run.log
+!examples/crystal_dimers/*/H_SF.dat
+
+# config.yaml is deliberately NOT ignored: it is the user's input, and an
+# example one is worth committing. A generated default will show as untracked.
+
+# Pipeline scratch and OpenMolcas products
+scratch/
+*.RasOrb.part
+*.dat.part
+*.ScfOrb
+*.JobIph
+
+# Working notes, not part of the distribution. Kept on disk, out of the repo.
+CLAUDE.md
+PLAN.md
+CHANGELOG.md

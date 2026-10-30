@@ -1,0 +1,33 @@
+name: tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  pytest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install package and test dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e .
+          # pyflakes backs tests/test_pure.py::test_every_module_has_no_undefined_names,
+          # which is importorskip-guarded and would silently skip without it.
+          pip install pytest pyflakes
+
+      # The suite is deliberately OpenMolcas-free: it covers the pure-Python
+      # logic whose failure is silent. The physics path is checked by running
+      # examples/tetracene against its committed reference matrix, by hand.
+      - name: Run tests
+        run: pytest tests/ -q

@@ -1,0 +1,171 @@
+18:13:17  INFO      sfh-gen 0.1.0
+18:13:17  INFO      Configuration loaded from: /scratch/781677/config.yaml
+────────────────────────────────────────────────────────────
+  Pipeline Configuration Summary
+────────────────────────────────────────────────────────────
+  System         : rubrene_1  (charge 0, spin 1)
+  Geometry       : /scratch/781677/dimer_1.xyz
+  Monomers       : split automatically from the dimer
+  OpenMolcas     : pymolcas
+  Basis set      : 6-31G*
+  Integrals      : RICD=True  CutOff=1.0e-20
+  Monomer        : CAS(2,2) -> 3 roots, orbitals from RasOrb.1
+  Dimer (CASCI)  : CAS(4,4) -> 20 roots
+  Step 03        : scf  (AO overlap + geometry only)
+  H_SF output    : /scratch/781677/H_SF.dat  (diabatic, zero = eps(|2020>))
+  Processes      : 12 total
+                   steps 01, 02 and 03 run one after the other
+  Dry run        : False   Skip existing: True
+────────────────────────────────────────────────────────────
+18:13:17  INFO      Monomer 1: /scratch/781677/rubrene_1_mono1.xyz
+18:13:17  INFO      Monomer 2: /scratch/781677/rubrene_1_mono2.xyz
+18:13:17  INFO      ────────────────────────────────────────────────────────────
+18:13:17  INFO      STEP 01 — CASSCF(2,2) on monomer 1
+18:13:17  INFO      ────────────────────────────────────────────────────────────
+18:13:17  INFO      Input written to: /scratch/781677/01_mono1/input.inp
+18:13:17  INFO      Command: pymolcas /scratch/781677/01_mono1/input.inp
+18:13:17  DEBUG     Project         = rubrene_1_mono1
+18:13:17  DEBUG     MOLCAS_PROJECT  = rubrene_1_mono1
+18:13:17  DEBUG     MOLCAS_WORKDIR  = /scratch/781677/01_mono1/scratch
+18:13:17  DEBUG     MOLCAS_OUTPUT   = /scratch/781677/01_mono1/scratch
+18:13:17  INFO      MOLCAS_NPROCS   = 12
+18:34:29  DEBUG     Return code: 0
+18:34:29  DEBUG     Copied: /scratch/781677/01_mono1/scratch/rubrene_1_mono1.RasOrb -> /scratch/781677/01_mono1/rubrene_1_mono1.RasOrb
+18:34:29  DEBUG     Copied: /scratch/781677/01_mono1/scratch/rubrene_1_mono1.RasOrb.1 -> /scratch/781677/01_mono1/rubrene_1_mono1.RasOrb.1
+18:34:29  DEBUG     Copied: /scratch/781677/01_mono1/scratch/rubrene_1_mono1.RasOrb.2 -> /scratch/781677/01_mono1/rubrene_1_mono1.RasOrb.2
+18:34:29  DEBUG     Copied: /scratch/781677/01_mono1/scratch/rubrene_1_mono1.RasOrb.3 -> /scratch/781677/01_mono1/rubrene_1_mono1.RasOrb.3
+18:34:29  DEBUG     Copied: /scratch/781677/01_mono1/scratch/rubrene_1_mono1.ScfOrb -> /scratch/781677/01_mono1/rubrene_1_mono1.ScfOrb
+18:34:29  DEBUG     Copied: /scratch/781677/01_mono1/scratch/rubrene_1_mono1.rasscf.h5 -> /scratch/781677/01_mono1/rubrene_1_mono1.rasscf.h5
+18:34:29  DEBUG     Copied: /scratch/781677/01_mono1/scratch/rubrene_1_mono1.scf.h5 -> /scratch/781677/01_mono1/rubrene_1_mono1.scf.h5
+18:34:31  INFO      OpenMolcas finished successfully.
+18:34:31  INFO      Log: /scratch/781677/01_mono1/rubrene_1_mono1.log
+18:34:31  INFO      ────────────────────────────────────────────────────────────
+18:34:31  INFO      STEP 02 — CASSCF(2,2) on monomer 2
+18:34:31  INFO      ────────────────────────────────────────────────────────────
+18:34:31  INFO      Input written to: /scratch/781677/02_mono2/input.inp
+18:34:31  INFO      Command: pymolcas /scratch/781677/02_mono2/input.inp
+18:34:31  DEBUG     Project         = rubrene_1_mono2
+18:34:31  DEBUG     MOLCAS_PROJECT  = rubrene_1_mono2
+18:34:31  DEBUG     MOLCAS_WORKDIR  = /scratch/781677/02_mono2/scratch
+18:34:31  DEBUG     MOLCAS_OUTPUT   = /scratch/781677/02_mono2/scratch
+18:34:31  INFO      MOLCAS_NPROCS   = 12
+18:53:27  DEBUG     Return code: 0
+18:53:27  DEBUG     Copied: /scratch/781677/02_mono2/scratch/rubrene_1_mono2.RasOrb -> /scratch/781677/02_mono2/rubrene_1_mono2.RasOrb
+18:53:27  DEBUG     Copied: /scratch/781677/02_mono2/scratch/rubrene_1_mono2.RasOrb.1 -> /scratch/781677/02_mono2/rubrene_1_mono2.RasOrb.1
+18:53:27  DEBUG     Copied: /scratch/781677/02_mono2/scratch/rubrene_1_mono2.RasOrb.2 -> /scratch/781677/02_mono2/rubrene_1_mono2.RasOrb.2
+18:53:27  DEBUG     Copied: /scratch/781677/02_mono2/scratch/rubrene_1_mono2.RasOrb.3 -> /scratch/781677/02_mono2/rubrene_1_mono2.RasOrb.3
+18:53:27  DEBUG     Copied: /scratch/781677/02_mono2/scratch/rubrene_1_mono2.ScfOrb -> /scratch/781677/02_mono2/rubrene_1_mono2.ScfOrb
+18:53:27  DEBUG     Copied: /scratch/781677/02_mono2/scratch/rubrene_1_mono2.rasscf.h5 -> /scratch/781677/02_mono2/rubrene_1_mono2.rasscf.h5
+18:53:27  DEBUG     Copied: /scratch/781677/02_mono2/scratch/rubrene_1_mono2.scf.h5 -> /scratch/781677/02_mono2/rubrene_1_mono2.scf.h5
+18:53:29  INFO      OpenMolcas finished successfully.
+18:53:29  INFO      Log: /scratch/781677/02_mono2/rubrene_1_mono2.log
+18:53:29  INFO      ────────────────────────────────────────────────────────────
+18:53:29  INFO      STEP 03 — SCF on the dimer (AO overlap + geometry only)
+18:53:29  INFO      ────────────────────────────────────────────────────────────
+18:53:29  INFO      Input written to: /scratch/781677/03_dimer/input.inp
+18:53:29  INFO      Command: pymolcas /scratch/781677/03_dimer/input.inp
+18:53:29  DEBUG     Project         = rubrene_1_dimer
+18:53:29  DEBUG     MOLCAS_PROJECT  = rubrene_1_dimer
+18:53:29  DEBUG     MOLCAS_WORKDIR  = /scratch/781677/03_dimer/scratch
+18:53:29  DEBUG     MOLCAS_OUTPUT   = /scratch/781677/03_dimer/scratch
+18:53:29  INFO      MOLCAS_NPROCS   = 12
+20:15:25  DEBUG     Return code: 0
+20:15:25  DEBUG     Copied: /scratch/781677/03_dimer/scratch/rubrene_1_dimer.ScfOrb -> /scratch/781677/03_dimer/rubrene_1_dimer.ScfOrb
+20:15:25  DEBUG     Copied: /scratch/781677/03_dimer/scratch/rubrene_1_dimer.scf.h5 -> /scratch/781677/03_dimer/rubrene_1_dimer.scf.h5
+20:15:31  INFO      OpenMolcas finished successfully.
+20:15:31  INFO      Log: /scratch/781677/03_dimer/rubrene_1_dimer.log
+20:15:31  INFO      ────────────────────────────────────────────────────────────
+20:15:31  INFO      STEP 04 — Local orbitals (Loewdin)
+20:15:31  INFO      ────────────────────────────────────────────────────────────
+20:15:31  INFO      Monomer orbitals: RasOrb.1 (natural orbitals of root 1)
+20:15:31  INFO        monomer 1: 01_mono1/rubrene_1_mono1.RasOrb.1
+20:15:31  INFO        monomer 2: 02_mono2/rubrene_1_mono2.RasOrb.1
+20:15:31  INFO        dimer scaffold: 03_dimer/rubrene_1_dimer.scf.h5
+  monomer 1: active occupations 1.949726 / 0.050274
+  monomer 2: active occupations 1.949724 / 0.050276
+Stage 1: 282 occupied+active orbitals (141 + 141)
+  Stage 1: overlap eigenvalues min=0.940621, max=1.059379
+Stage 2: 1090 secondary orbitals (545 + 545)
+  Stage 2 (post-projection): overlap eigenvalues min=0.350563, max=1.498210
+  Active orbital localization (Mulliken population per fragment):
+    HOMO_A   monomer 1 = +1.0000   monomer 2 = -0.0000
+    LUMO_A   monomer 1 = +1.0001   monomer 2 = -0.0001
+    HOMO_B   monomer 1 = -0.0000   monomer 2 = +1.0000
+    LUMO_B   monomer 1 = -0.0001   monomer 2 = +1.0001
+Final set: 1372 orbitals, type counts: {'I': 278, '2': 4, 'S': 1090}
+Full-set orthonormality check: max|C^T S C - I| = 2.66e-13
+Wrote 1372 orbitals to 04_local/rubrene_1_local.RasOrb
+20:15:35  INFO      ────────────────────────────────────────────────────────────
+20:15:35  INFO      STEP 05 — CASCI(4,4), 20 roots
+20:15:35  INFO      ────────────────────────────────────────────────────────────
+20:15:35  INFO      Input written to: /scratch/781677/05_casci/input.inp
+20:15:35  INFO      Command: pymolcas /scratch/781677/05_casci/input.inp
+20:15:35  DEBUG     Project         = rubrene_1_casci
+20:15:35  DEBUG     MOLCAS_PROJECT  = rubrene_1_casci
+20:15:35  DEBUG     MOLCAS_WORKDIR  = /scratch/781677/05_casci/scratch
+20:15:35  DEBUG     MOLCAS_OUTPUT   = /scratch/781677/05_casci/scratch
+20:15:35  INFO      MOLCAS_NPROCS   = 12
+21:19:32  DEBUG     Return code: 0
+21:19:32  DEBUG     Copied: /scratch/781677/05_casci/scratch/rubrene_1_casci.RasOrb -> /scratch/781677/05_casci/rubrene_1_casci.RasOrb
+21:19:32  DEBUG     Copied: /scratch/781677/05_casci/scratch/rubrene_1_casci.RasOrb.1 -> /scratch/781677/05_casci/rubrene_1_casci.RasOrb.1
+21:19:32  DEBUG     Copied: /scratch/781677/05_casci/scratch/rubrene_1_casci.RasOrb.10 -> /scratch/781677/05_casci/rubrene_1_casci.RasOrb.10
+21:19:32  DEBUG     Copied: /scratch/781677/05_casci/scratch/rubrene_1_casci.RasOrb.11 -> /scratch/781677/05_casci/rubrene_1_casci.RasOrb.11
+21:19:32  DEBUG     Copied: /scratch/781677/05_casci/scratch/rubrene_1_casci.RasOrb.12 -> /scratch/781677/05_casci/rubrene_1_casci.RasOrb.12
+21:19:33  DEBUG     Copied: /scratch/781677/05_casci/scratch/rubrene_1_casci.RasOrb.13 -> /scratch/781677/05_casci/rubrene_1_casci.RasOrb.13
+21:19:33  DEBUG     Copied: /scratch/781677/05_casci/scratch/rubrene_1_casci.RasOrb.14 -> /scratch/781677/05_casci/rubrene_1_casci.RasOrb.14
+21:19:33  DEBUG     Copied: /scratch/781677/05_casci/scratch/rubrene_1_casci.RasOrb.15 -> /scratch/781677/05_casci/rubrene_1_casci.RasOrb.15
+21:19:33  DEBUG     Copied: /scratch/781677/05_casci/scratch/rubrene_1_casci.RasOrb.16 -> /scratch/781677/05_casci/rubrene_1_casci.RasOrb.16
+21:19:33  DEBUG     Copied: /scratch/781677/05_casci/scratch/rubrene_1_casci.RasOrb.17 -> /scratch/781677/05_casci/rubrene_1_casci.RasOrb.17
+21:19:33  DEBUG     Copied: /scratch/781677/05_casci/scratch/rubrene_1_casci.RasOrb.18 -> /scratch/781677/05_casci/rubrene_1_casci.RasOrb.18
+21:19:33  DEBUG     Copied: /scratch/781677/05_casci/scratch/rubrene_1_casci.RasOrb.19 -> /scratch/781677/05_casci/rubrene_1_casci.RasOrb.19
+21:19:33  DEBUG     Copied: /scratch/781677/05_casci/scratch/rubrene_1_casci.RasOrb.2 -> /scratch/781677/05_casci/rubrene_1_casci.RasOrb.2
+21:19:33  DEBUG     Copied: /scratch/781677/05_casci/scratch/rubrene_1_casci.RasOrb.20 -> /scratch/781677/05_casci/rubrene_1_casci.RasOrb.20
+21:19:33  DEBUG     Copied: /scratch/781677/05_casci/scratch/rubrene_1_casci.RasOrb.3 -> /scratch/781677/05_casci/rubrene_1_casci.RasOrb.3
+21:19:33  DEBUG     Copied: /scratch/781677/05_casci/scratch/rubrene_1_casci.RasOrb.4 -> /scratch/781677/05_casci/rubrene_1_casci.RasOrb.4
+21:19:33  DEBUG     Copied: /scratch/781677/05_casci/scratch/rubrene_1_casci.RasOrb.5 -> /scratch/781677/05_casci/rubrene_1_casci.RasOrb.5
+21:19:33  DEBUG     Copied: /scratch/781677/05_casci/scratch/rubrene_1_casci.RasOrb.6 -> /scratch/781677/05_casci/rubrene_1_casci.RasOrb.6
+21:19:33  DEBUG     Copied: /scratch/781677/05_casci/scratch/rubrene_1_casci.RasOrb.7 -> /scratch/781677/05_casci/rubrene_1_casci.RasOrb.7
+21:19:33  DEBUG     Copied: /scratch/781677/05_casci/scratch/rubrene_1_casci.RasOrb.8 -> /scratch/781677/05_casci/rubrene_1_casci.RasOrb.8
+21:19:33  DEBUG     Copied: /scratch/781677/05_casci/scratch/rubrene_1_casci.RasOrb.9 -> /scratch/781677/05_casci/rubrene_1_casci.RasOrb.9
+21:19:33  DEBUG     Copied: /scratch/781677/05_casci/scratch/rubrene_1_casci.rasscf.h5 -> /scratch/781677/05_casci/rubrene_1_casci.rasscf.h5
+21:19:50  INFO      OpenMolcas finished successfully.
+21:19:50  INFO      Log: /scratch/781677/05_casci/rubrene_1_casci.log
+21:19:50  INFO      ────────────────────────────────────────────────────────────
+21:19:50  INFO      Singlet Fission Hamiltonian
+21:19:50  INFO      ────────────────────────────────────────────────────────────
+Loading CI data from 05_casci/rubrene_1_casci.rasscf.h5
+Found 20 roots, 20 CSFs
+Ground-state check: weight of CSF |2020> in root 1 = 0.9502  (want > 0.95)
+Diabatic ground state |2020> lies 0.3025 eV above the lowest adiabatic root
+  ────────────────────────────────────────────────────────────────────────────────────────────
+  Singlet Fission diabatic Hamiltonian / eV
+  ────────────────────────────────────────────────────────────────────────────────────────────
+  energy zero : eps(|2020>), the diabatic ground state
+  states      : |A* B > = ud20, |A  B*> = 20ud, |A+ B-> = u02d, |A- B+> = 2ud0, |AT BT> = uudd
+                (active order HOMO_A, LUMO_A, HOMO_B, LUMO_B)
+
+       |A* B >     |A  B*>     |A+ B->     |A- B+>     |AT BT>   | state
+      3.731536    0.003268    0.005672    0.003862   -0.000001   | |A* B >
+      0.003268    3.731514   -0.003862   -0.005672    0.000001   | |A  B*>
+      0.005672   -0.003862    5.263478   -0.000000   -0.001682   | |A+ B->
+      0.003862   -0.005672   -0.000000    5.263471   -0.001682   | |A- B+>
+     -0.000001    0.000001   -0.001682   -0.001682    3.704017   | |AT BT>
+
+  the same diagonal referenced to the lowest adiabatic root, which
+  lies 0.303 eV below eps(|2020>), for comparison only:
+         4.034       4.034       5.566       5.566       4.007
+  ────────────────────────────────────────────────────────────────────────────────────────────
+Hamiltonian saved to /scratch/781677/H_SF.dat
+21:19:50  INFO      Output: /scratch/781677/H_SF.dat
+  ────────────────────────────────────────────────────────────
+  Timing
+  ────────────────────────────────────────────────────────────
+  01  CASSCF(2,2) on monomer 1 ..  21 m 13.9 s    11.4%
+  02  CASSCF(2,2) on monomer 2 ..  18 m 58.1 s    10.2%
+  03  SCF on the dimer .......... 1 h 22 m 02 s    44.0%
+  04  Local orbitals ............        3.7 s     0.0%
+  05  CASCI(4,4), 20 roots ...... 1 h 04 m 14 s    34.4%
+  H   Hamiltonian and output ....        0.0 s     0.0%
+
+  total wall clock               3 h 06 m 33 s
+  ────────────────────────────────────────────────────────────

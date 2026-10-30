@@ -1,0 +1,196 @@
+18:00:08  INFO      sfh-gen 0.1.0
+18:00:08  INFO      Configuration loaded from: /scratch/781674/config.yaml
+────────────────────────────────────────────────────────────
+  Pipeline Configuration Summary
+────────────────────────────────────────────────────────────
+  System         : pentacene_1  (charge 0, spin 1)
+  Geometry       : /scratch/781674/dimer_1.xyz
+  Monomers       : split automatically from the dimer
+  OpenMolcas     : pymolcas
+  Basis set      : 6-31G*
+  Integrals      : RICD=True  CutOff=1.0e-20
+  Monomer        : CAS(2,2) -> 3 roots, orbitals from RasOrb.1
+  Dimer (CASCI)  : CAS(4,4) -> 20 roots
+  Step 03        : scf  (AO overlap + geometry only)
+  H_SF output    : /scratch/781674/H_SF.dat  (diabatic, zero = eps(|2020>))
+  Processes      : 12 total
+                   steps 01, 02 and 03 run one after the other
+  Dry run        : False   Skip existing: True
+────────────────────────────────────────────────────────────
+18:00:08  INFO      Monomer 1: /scratch/781674/pentacene_1_mono1.xyz
+18:00:08  INFO      Monomer 2: /scratch/781674/pentacene_1_mono2.xyz
+18:00:08  INFO      ────────────────────────────────────────────────────────────
+18:00:08  INFO      STEP 01 — CASSCF(2,2) on monomer 1
+18:00:08  INFO      ────────────────────────────────────────────────────────────
+18:00:08  INFO      Input written to: /scratch/781674/01_mono1/input.inp
+18:00:08  INFO      Command: pymolcas /scratch/781674/01_mono1/input.inp
+18:00:08  DEBUG     Project         = pentacene_1_mono1
+18:00:08  DEBUG     MOLCAS_PROJECT  = pentacene_1_mono1
+18:00:08  DEBUG     MOLCAS_WORKDIR  = /scratch/781674/01_mono1/scratch
+18:00:08  DEBUG     MOLCAS_OUTPUT   = /scratch/781674/01_mono1/scratch
+18:00:08  INFO      MOLCAS_NPROCS   = 12
+18:04:48  DEBUG     Return code: 0
+18:04:48  DEBUG     Copied: /scratch/781674/01_mono1/scratch/pentacene_1_mono1.RasOrb -> /scratch/781674/01_mono1/pentacene_1_mono1.RasOrb
+18:04:48  DEBUG     Copied: /scratch/781674/01_mono1/scratch/pentacene_1_mono1.RasOrb.1 -> /scratch/781674/01_mono1/pentacene_1_mono1.RasOrb.1
+18:04:48  DEBUG     Copied: /scratch/781674/01_mono1/scratch/pentacene_1_mono1.RasOrb.2 -> /scratch/781674/01_mono1/pentacene_1_mono1.RasOrb.2
+18:04:48  DEBUG     Copied: /scratch/781674/01_mono1/scratch/pentacene_1_mono1.RasOrb.3 -> /scratch/781674/01_mono1/pentacene_1_mono1.RasOrb.3
+18:04:48  DEBUG     Copied: /scratch/781674/01_mono1/scratch/pentacene_1_mono1.ScfOrb -> /scratch/781674/01_mono1/pentacene_1_mono1.ScfOrb
+18:04:48  DEBUG     Copied: /scratch/781674/01_mono1/scratch/pentacene_1_mono1.rasscf.h5 -> /scratch/781674/01_mono1/pentacene_1_mono1.rasscf.h5
+18:04:48  DEBUG     Copied: /scratch/781674/01_mono1/scratch/pentacene_1_mono1.scf.h5 -> /scratch/781674/01_mono1/pentacene_1_mono1.scf.h5
+18:04:48  INFO      OpenMolcas finished successfully.
+18:04:48  INFO      Log: /scratch/781674/01_mono1/pentacene_1_mono1.log
+18:04:48  INFO      ────────────────────────────────────────────────────────────
+18:04:48  INFO      STEP 02 — CASSCF(2,2) on monomer 2
+18:04:48  INFO      ────────────────────────────────────────────────────────────
+18:04:48  INFO      Input written to: /scratch/781674/02_mono2/input.inp
+18:04:48  INFO      Command: pymolcas /scratch/781674/02_mono2/input.inp
+18:04:48  DEBUG     Project         = pentacene_1_mono2
+18:04:48  DEBUG     MOLCAS_PROJECT  = pentacene_1_mono2
+18:04:48  DEBUG     MOLCAS_WORKDIR  = /scratch/781674/02_mono2/scratch
+18:04:48  DEBUG     MOLCAS_OUTPUT   = /scratch/781674/02_mono2/scratch
+18:04:48  INFO      MOLCAS_NPROCS   = 12
+18:09:37  DEBUG     Return code: 0
+18:09:37  DEBUG     Copied: /scratch/781674/02_mono2/scratch/pentacene_1_mono2.RasOrb -> /scratch/781674/02_mono2/pentacene_1_mono2.RasOrb
+18:09:37  DEBUG     Copied: /scratch/781674/02_mono2/scratch/pentacene_1_mono2.RasOrb.1 -> /scratch/781674/02_mono2/pentacene_1_mono2.RasOrb.1
+18:09:37  DEBUG     Copied: /scratch/781674/02_mono2/scratch/pentacene_1_mono2.RasOrb.2 -> /scratch/781674/02_mono2/pentacene_1_mono2.RasOrb.2
+18:09:37  DEBUG     Copied: /scratch/781674/02_mono2/scratch/pentacene_1_mono2.RasOrb.3 -> /scratch/781674/02_mono2/pentacene_1_mono2.RasOrb.3
+18:09:37  DEBUG     Copied: /scratch/781674/02_mono2/scratch/pentacene_1_mono2.ScfOrb -> /scratch/781674/02_mono2/pentacene_1_mono2.ScfOrb
+18:09:37  DEBUG     Copied: /scratch/781674/02_mono2/scratch/pentacene_1_mono2.rasscf.h5 -> /scratch/781674/02_mono2/pentacene_1_mono2.rasscf.h5
+18:09:37  DEBUG     Copied: /scratch/781674/02_mono2/scratch/pentacene_1_mono2.scf.h5 -> /scratch/781674/02_mono2/pentacene_1_mono2.scf.h5
+18:09:37  INFO      OpenMolcas finished successfully.
+18:09:37  INFO      Log: /scratch/781674/02_mono2/pentacene_1_mono2.log
+18:09:37  INFO      ────────────────────────────────────────────────────────────
+18:09:37  INFO      STEP 03 — SCF on the dimer (AO overlap + geometry only)
+18:09:37  INFO      ────────────────────────────────────────────────────────────
+18:09:37  INFO      Input written to: /scratch/781674/03_dimer/input.inp
+18:09:37  INFO      Command: pymolcas /scratch/781674/03_dimer/input.inp
+18:09:37  DEBUG     Project         = pentacene_1_dimer
+18:09:37  DEBUG     MOLCAS_PROJECT  = pentacene_1_dimer
+18:09:37  DEBUG     MOLCAS_WORKDIR  = /scratch/781674/03_dimer/scratch
+18:09:37  DEBUG     MOLCAS_OUTPUT   = /scratch/781674/03_dimer/scratch
+18:09:37  INFO      MOLCAS_NPROCS   = 12
+18:24:38  DEBUG     Return code: 0
+18:24:38  DEBUG     Copied: /scratch/781674/03_dimer/scratch/pentacene_1_dimer.ScfOrb -> /scratch/781674/03_dimer/pentacene_1_dimer.ScfOrb
+18:24:38  DEBUG     Copied: /scratch/781674/03_dimer/scratch/pentacene_1_dimer.scf.h5 -> /scratch/781674/03_dimer/pentacene_1_dimer.scf.h5
+18:24:40  INFO      OpenMolcas finished successfully.
+18:24:40  INFO      Log: /scratch/781674/03_dimer/pentacene_1_dimer.log
+18:24:40  INFO      ────────────────────────────────────────────────────────────
+18:24:40  INFO      STEP 04 — Local orbitals (Loewdin)
+18:24:40  INFO      ────────────────────────────────────────────────────────────
+18:24:40  INFO      Monomer orbitals: RasOrb.1 (natural orbitals of root 1)
+18:24:40  INFO        monomer 1: 01_mono1/pentacene_1_mono1.RasOrb.1
+18:24:40  INFO        monomer 2: 02_mono2/pentacene_1_mono2.RasOrb.1
+18:24:40  INFO        dimer scaffold: 03_dimer/pentacene_1_dimer.scf.h5
+  monomer 1: active occupations 0.063264 / 1.936736
+  monomer 1: LUMO is stored before HOMO -- swapping the two active columns so the block reads HOMO then LUMO.
+  monomer 2: active occupations 1.936736 / 0.063264
+Stage 1: 148 occupied+active orbitals (74 + 74)
+  Stage 1: overlap eigenvalues min=0.953880, max=1.046120
+Stage 2: 568 secondary orbitals (284 + 284)
+  Stage 2 (post-projection): overlap eigenvalues min=0.556580, max=1.391548
+  Active orbital localization (Mulliken population per fragment):
+    HOMO_A   monomer 1 = +1.0001   monomer 2 = -0.0001
+    LUMO_A   monomer 1 = +1.0001   monomer 2 = -0.0001
+    HOMO_B   monomer 1 = -0.0001   monomer 2 = +1.0001
+    LUMO_B   monomer 1 = -0.0001   monomer 2 = +1.0001
+Final set: 716 orbitals, type counts: {'I': 144, '2': 4, 'S': 568}
+Full-set orthonormality check: max|C^T S C - I| = 4.67e-13
+Wrote 716 orbitals to 04_local/pentacene_1_local.RasOrb
+
+  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  CHECK THIS RUN BY HAND:
+    - monomer 1: the two active orbitals were stored LUMO-first in the RasOrb and have been swapped.
+  The orbital order decides which CSF is which diabatic state, so a
+  mistake here is silent. Confirm that the weight of CSF |2020> in
+  root 1 exceeds 0.95, and that the two LE diagonal
+  elements come out close to each other.
+  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+18:24:41  WARNING   Step 04: monomer 1: the two active orbitals were stored LUMO-first in the RasOrb and have been swapped.
+18:24:41  INFO      ────────────────────────────────────────────────────────────
+18:24:41  INFO      STEP 05 — CASCI(4,4), 20 roots
+18:24:41  INFO      ────────────────────────────────────────────────────────────
+18:24:41  INFO      Input written to: /scratch/781674/05_casci/input.inp
+18:24:41  INFO      Command: pymolcas /scratch/781674/05_casci/input.inp
+18:24:41  DEBUG     Project         = pentacene_1_casci
+18:24:41  DEBUG     MOLCAS_PROJECT  = pentacene_1_casci
+18:24:41  DEBUG     MOLCAS_WORKDIR  = /scratch/781674/05_casci/scratch
+18:24:41  DEBUG     MOLCAS_OUTPUT   = /scratch/781674/05_casci/scratch
+18:24:41  INFO      MOLCAS_NPROCS   = 12
+18:39:27  DEBUG     Return code: 0
+18:39:27  DEBUG     Copied: /scratch/781674/05_casci/scratch/pentacene_1_casci.RasOrb -> /scratch/781674/05_casci/pentacene_1_casci.RasOrb
+18:39:27  DEBUG     Copied: /scratch/781674/05_casci/scratch/pentacene_1_casci.RasOrb.1 -> /scratch/781674/05_casci/pentacene_1_casci.RasOrb.1
+18:39:27  DEBUG     Copied: /scratch/781674/05_casci/scratch/pentacene_1_casci.RasOrb.10 -> /scratch/781674/05_casci/pentacene_1_casci.RasOrb.10
+18:39:27  DEBUG     Copied: /scratch/781674/05_casci/scratch/pentacene_1_casci.RasOrb.11 -> /scratch/781674/05_casci/pentacene_1_casci.RasOrb.11
+18:39:27  DEBUG     Copied: /scratch/781674/05_casci/scratch/pentacene_1_casci.RasOrb.12 -> /scratch/781674/05_casci/pentacene_1_casci.RasOrb.12
+18:39:27  DEBUG     Copied: /scratch/781674/05_casci/scratch/pentacene_1_casci.RasOrb.13 -> /scratch/781674/05_casci/pentacene_1_casci.RasOrb.13
+18:39:27  DEBUG     Copied: /scratch/781674/05_casci/scratch/pentacene_1_casci.RasOrb.14 -> /scratch/781674/05_casci/pentacene_1_casci.RasOrb.14
+18:39:27  DEBUG     Copied: /scratch/781674/05_casci/scratch/pentacene_1_casci.RasOrb.15 -> /scratch/781674/05_casci/pentacene_1_casci.RasOrb.15
+18:39:27  DEBUG     Copied: /scratch/781674/05_casci/scratch/pentacene_1_casci.RasOrb.16 -> /scratch/781674/05_casci/pentacene_1_casci.RasOrb.16
+18:39:27  DEBUG     Copied: /scratch/781674/05_casci/scratch/pentacene_1_casci.RasOrb.17 -> /scratch/781674/05_casci/pentacene_1_casci.RasOrb.17
+18:39:27  DEBUG     Copied: /scratch/781674/05_casci/scratch/pentacene_1_casci.RasOrb.18 -> /scratch/781674/05_casci/pentacene_1_casci.RasOrb.18
+18:39:27  DEBUG     Copied: /scratch/781674/05_casci/scratch/pentacene_1_casci.RasOrb.19 -> /scratch/781674/05_casci/pentacene_1_casci.RasOrb.19
+18:39:27  DEBUG     Copied: /scratch/781674/05_casci/scratch/pentacene_1_casci.RasOrb.2 -> /scratch/781674/05_casci/pentacene_1_casci.RasOrb.2
+18:39:27  DEBUG     Copied: /scratch/781674/05_casci/scratch/pentacene_1_casci.RasOrb.20 -> /scratch/781674/05_casci/pentacene_1_casci.RasOrb.20
+18:39:27  DEBUG     Copied: /scratch/781674/05_casci/scratch/pentacene_1_casci.RasOrb.3 -> /scratch/781674/05_casci/pentacene_1_casci.RasOrb.3
+18:39:27  DEBUG     Copied: /scratch/781674/05_casci/scratch/pentacene_1_casci.RasOrb.4 -> /scratch/781674/05_casci/pentacene_1_casci.RasOrb.4
+18:39:27  DEBUG     Copied: /scratch/781674/05_casci/scratch/pentacene_1_casci.RasOrb.5 -> /scratch/781674/05_casci/pentacene_1_casci.RasOrb.5
+18:39:27  DEBUG     Copied: /scratch/781674/05_casci/scratch/pentacene_1_casci.RasOrb.6 -> /scratch/781674/05_casci/pentacene_1_casci.RasOrb.6
+18:39:27  DEBUG     Copied: /scratch/781674/05_casci/scratch/pentacene_1_casci.RasOrb.7 -> /scratch/781674/05_casci/pentacene_1_casci.RasOrb.7
+18:39:27  DEBUG     Copied: /scratch/781674/05_casci/scratch/pentacene_1_casci.RasOrb.8 -> /scratch/781674/05_casci/pentacene_1_casci.RasOrb.8
+18:39:27  DEBUG     Copied: /scratch/781674/05_casci/scratch/pentacene_1_casci.RasOrb.9 -> /scratch/781674/05_casci/pentacene_1_casci.RasOrb.9
+18:39:27  DEBUG     Copied: /scratch/781674/05_casci/scratch/pentacene_1_casci.rasscf.h5 -> /scratch/781674/05_casci/pentacene_1_casci.rasscf.h5
+18:39:31  INFO      OpenMolcas finished successfully.
+18:39:31  INFO      Log: /scratch/781674/05_casci/pentacene_1_casci.log
+18:39:31  INFO      ────────────────────────────────────────────────────────────
+18:39:31  INFO      Singlet Fission Hamiltonian
+18:39:31  INFO      ────────────────────────────────────────────────────────────
+Loading CI data from 05_casci/pentacene_1_casci.rasscf.h5
+Found 20 roots, 20 CSFs
+Ground-state check: weight of CSF |2020> in root 1 = 0.9371  (want > 0.95)
+  WARNING: weight of CSF |2020> in root 1 is 0.9371, below the 0.95 expected for a weakly coupled dimer. The active orbitals are probably not localized HOMO/LUMO pairs: check that the monomer orbitals came from a root-specific RasOrb.N and that the final RASSCF used CIOnly.
+Diabatic ground state |2020> lies 0.3330 eV above the lowest adiabatic root
+  ────────────────────────────────────────────────────────────────────────────────────────────
+  Singlet Fission diabatic Hamiltonian / eV
+  ────────────────────────────────────────────────────────────────────────────────────────────
+  energy zero : eps(|2020>), the diabatic ground state
+  states      : |A* B > = ud20, |A  B*> = 20ud, |A+ B-> = u02d, |A- B+> = 2ud0, |AT BT> = uudd
+                (active order HOMO_A, LUMO_A, HOMO_B, LUMO_B)
+
+       |A* B >     |A  B*>     |A+ B->     |A- B+>     |AT BT>   | state
+      3.303546    0.090637    0.063804    0.050935   -0.000034   | |A* B >
+      0.090637    3.303546   -0.050935   -0.063804   -0.000034   | |A  B*>
+      0.063804   -0.050935    4.162709   -0.000074   -0.064289   | |A+ B->
+      0.050935   -0.063804   -0.000074    4.162714    0.064289   | |A- B+>
+     -0.000034   -0.000034   -0.064289    0.064289    2.961649   | |AT BT>
+
+  the same diagonal referenced to the lowest adiabatic root, which
+  lies 0.333 eV below eps(|2020>), for comparison only:
+         3.637       3.637       4.496       4.496       3.295
+  ────────────────────────────────────────────────────────────────────────────────────────────
+Hamiltonian saved to /scratch/781674/H_SF.dat
+18:39:31  INFO      Output: /scratch/781674/H_SF.dat
+  ────────────────────────────────────────────────────────────
+  Timing
+  ────────────────────────────────────────────────────────────
+  01  CASSCF(2,2) on monomer 1 ..   4 m 40.3 s    11.9%
+  02  CASSCF(2,2) on monomer 2 ..   4 m 49.0 s    12.2%
+  03  SCF on the dimer ..........  15 m 02.9 s    38.2%
+  04  Local orbitals ............        1.1 s     0.0%
+  05  CASCI(4,4), 20 roots ......  14 m 50.1 s    37.7%
+  H   Hamiltonian and output ....        0.0 s     0.0%
+
+  total wall clock                39 m 23.9 s
+  ────────────────────────────────────────────────────────────
+
+  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  CHECK THIS RUN BY HAND:
+    - monomer 1: the two active orbitals were stored LUMO-first in the RasOrb and have been swapped.
+    - weight of CSF |2020> in root 1 is 0.9371, below the 0.95 expected for a weakly coupled dimer. The active orbitals are probably not localized HOMO/LUMO pairs: check that the monomer orbitals came from a root-specific RasOrb.N and that the final RASSCF used CIOnly.
+  The orbital order decides which CSF is which diabatic state, so a
+  mistake here is silent. Confirm that the weight of CSF |2020> in
+  root 1 exceeds 0.95, and that the two LE diagonal
+  elements come out close to each other.
+  (recorded in 04_local/pentacene_1_local.warnings)
+  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+

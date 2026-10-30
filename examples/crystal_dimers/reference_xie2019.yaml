@@ -1,0 +1,56 @@
+# Electronic Hamiltonian elements of Xie, Santana-Bonilla, Fang, Liu, Troisi
+# and Ma, J. Chem. Theory Comput. 15, 3721 (2019), 10.1021/acs.jctc.9b00122,
+# in eV.
+#
+# Copied verbatim from the paper, including the signs, which carry no physical
+# meaning: orbital phases are arbitrary, so compare magnitudes off the
+# diagonal. Rows and columns are in the same order as H_SF.dat,
+#
+#   |A* B>, |A B*>, |A+ B->, |A- B+>, |1(AT BT)>
+#
+# but which monomer the paper calls A need not be the one sfh-gen calls A,
+# so compare_with_reference.py tries both labellings.
+#
+# `run` names the directory here whose geometry the couplings identify as that
+# dimer; see README.md for how the identification was made. The paper studies
+# no pentacene, and no table exists for any rubrene pair other than AB.
+
+tetracene AB:
+  source: Table 1
+  run: tetracene_1
+  matrix:
+    - [ 4.144,  0.026,  0.109, -0.092,  0.000]
+    - [ 0.026,  4.070,  0.090, -0.112,  0.000]
+    - [ 0.109,  0.090,  4.509,  0.000,  0.070]
+    - [-0.092, -0.112,  0.000,  4.992,  0.087]
+    - [ 0.000,  0.000,  0.070,  0.087,  4.065]
+
+tetracene BC:
+  source: Table S2
+  run: tetracene_2
+  matrix:
+    - [ 4.133,  0.019, -0.115,  0.029,  0.000]
+    - [ 0.019,  4.140, -0.028,  0.119,  0.000]
+    - [-0.115, -0.028,  4.636,  0.000, -0.052]
+    - [ 0.029,  0.119,  0.000,  5.049, -0.083]
+    - [ 0.000,  0.000, -0.052, -0.083,  4.128]
+
+tetracene AC:
+  source: Table S1
+  run: tetracene_3
+  matrix:
+    - [ 4.112,  0.105, -0.009,  0.014,  0.000]
+    - [ 0.105,  4.112, -0.014,  0.009,  0.000]
+    - [-0.009, -0.014,  5.091,  0.000,  0.004]
+    - [ 0.014,  0.009,  0.000,  5.091,  0.004]
+    - [ 0.000,  0.000,  0.004,  0.004,  4.076]
+
+rubrene AB:
+  source: Table 2
+  run: null                    # neither rubrene run here is this pair
+  matrix:
+    - [ 4.018,  0.058, -0.086,  0.168,  0.000]
+    - [ 0.058,  4.017, -0.168,  0.086,  0.000]
+    - [-0.086, -0.168,  5.043,  0.000,  0.000]
+    - [ 0.168,  0.086,  0.000,  5.042,  0.000]
+    - [ 0.000,  0.000,  0.000,  0.000,  4.006]
