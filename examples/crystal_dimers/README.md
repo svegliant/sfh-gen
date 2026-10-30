@@ -133,25 +133,7 @@ more open-shell monomer, check the Mulliken fragment populations in the step 04
 log before discarding a run. The failure it was built to catch read 0.41, not
 0.94.
 
-## Things to be careful of
 
-- **6-31G\*, not 6-31G.** The reference used CASSCF/6-31G for the monomers and
-  CASCI/6-31G(d) for the dimer. `sfh-gen` maps basis functions by index when it
-  embeds the monomer orbitals, so one basis has to run throughout; these runs
-  use 6-31G\* everywhere and [../tetracene/](../tetracene/) uses 6-31G. On
-  tetracene AB the worst coupling error moves only from 23 to 25 meV between
-  the two, so the basis is not what the diagonal disagreement is about.
-- **Signs mean nothing.** Orbital phases are arbitrary, so compare magnitudes
-  off the diagonal.
-- **Which monomer is A is a convention.** Exchanging LE1 with LE2 and CT1 with
-  CT2 at the same time relabels the same result;
-  `compare_with_reference.py` tries both and reports the closer one.
-- One monomer in each of `pentacene_1` and `pentacene_3` hit the LUMO-first
-  case: OpenMolcas wrote that active pair in the other order and `sfh-gen`
-  swapped it back. The log says so twice, at the time and again after the
-  results.
-- The logs quote absolute paths under `/scratch/<jobid>`, the cluster's
-  per-job scratch. They are the real ones and are left as they were.
 
 ## Files in each directory
 
