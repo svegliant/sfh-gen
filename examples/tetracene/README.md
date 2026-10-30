@@ -30,8 +30,9 @@ python3 run_tetracene.py            # the same thing through the library
 | `run_tetracene.py` | runs the pipeline through the library, then compares with the reference element by element |
 | `H_SF.dat.reference` | the committed result |
 
-About 5.5 minutes on 24 cores: 32 s for the two monomers together, 194 s for
-the dimer SCF, the rest in the final CASCI.
+342 s for the run that produced `H_SF.dat.reference`: 34 s for the two
+monomers together, 208 s for the dimer SCF, 100 s for the final CASCI. That
+was one OpenMolcas process (`MOLCAS_NPROCS = 1`) on a 24-core workstation.
 
 ## What it found
 

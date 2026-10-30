@@ -128,16 +128,18 @@ worked script.
 
 ## Which options matter
 
-Everything else can stay at its default. Timings are
-[examples/tetracene/](examples/tetracene/): 60 atoms, 6-31G, 24 cores.
+Everything else can stay at its default. Timings are the dimer of
+[examples/tetracene/](examples/tetracene/) — 60 atoms, 6-31G — run as a single
+OpenMolcas process (`MOLCAS_NPROCS = 1`) on a 24-core workstation, so they
+compare the options against each other rather than predicting your machine.
 
 | decision | key | cost | choose it when |
 |---|---|---|---|
-| SCF dimer scaffold | `dimer.scaffold: scf` (default) | 194 s | always |
-| CASSCF dimer scaffold | `dimer.scaffold: rasscf` | 421 s | only to mirror the published procedure; the orbitals come out byte-identical |
+| SCF dimer scaffold | `dimer.scaffold: scf` (default) | 193 s | always |
+| CASSCF dimer scaffold | `dimer.scaffold: rasscf` | 403 s | only to mirror the published procedure; the orbitals come out byte-identical |
 | overlap 01, 02 and 03 | `parallel.concurrent_steps: all` (default) | — | always, if the node has the memory |
-| overlap the monomers only | `monomers` | 32 s + 194 s | three concurrent runs do not fit in memory |
-| no overlap | `none` | 60 s + 194 s | your site forbids nested job launches |
+| overlap the monomers only | `monomers` | 33 s + 193 s | three concurrent runs do not fit in memory |
+| no overlap | `none` | 32 s + 28 s + 193 s | your site forbids nested job launches |
 | give the monomer geometries | `paths.monomer1`, `monomer2` | — | preferred; no MDAnalysis needed |
 | let it split the dimer | omit both | — | convenient; needs MDAnalysis |
 
@@ -193,8 +195,10 @@ Ground-state check: weight of CSF |2020> in root 1 = 0.9543  (want > 0.95)
 **Below 0.95, stop and look before using the couplings.** This is the only
 number that detects a rotated active space, because such a rotation leaves
 everything else looking correct. In the bug that motivated this package it read
-0.41 while the energies looked fine and the couplings were wrong by up to a
-factor of four.
+0.41, and the couplings were out by up to a factor of three — V(CT1,TT) 2.9
+times too small, V(CT2,TT) twice too large, every LE/CT coupling roughly
+halved — while the adiabatic energies stayed correct. The two LE energies
+split by 1.465 eV instead of 0.115.
 
 The threshold is calibrated on tetracene, and a more open-shell monomer eats
 into the weight before the dimer exists. A CAS(2,2) ground state is

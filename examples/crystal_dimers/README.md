@@ -133,8 +133,6 @@ more open-shell monomer, check the Mulliken fragment populations in the step 04
 log before discarding a run. The failure it was built to catch read 0.41, not
 0.94.
 
-
-
 ## Files in each directory
 
 | file | what it is |
